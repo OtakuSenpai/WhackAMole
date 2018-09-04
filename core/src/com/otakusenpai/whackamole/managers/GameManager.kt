@@ -11,6 +11,9 @@ class GameManager() {
     lateinit var moleList: MutableList<Mole>
     lateinit var moleTexture: Texture
 
+    lateinit var backgroundTexture: Texture
+    lateinit var backgroundSprite: Sprite
+
     var moleVector: Vector2 = Vector2()
 
     val MOLE_RESIZE_FACOTR = 300f
@@ -25,6 +28,9 @@ class GameManager() {
         moleList.add(Mole())
         moleList.add(Mole())
         moleList.add(Mole())
+
+        backgroundTexture = Texture(Gdx.files.internal("background.png"))
+        backgroundSprite = Sprite(backgroundTexture)
 
         moleTexture = Texture(Gdx.files.internal("mole.png"))
 
@@ -50,6 +56,7 @@ class GameManager() {
     }
 
     fun render(batch: SpriteBatch) {
+        backgroundSprite.draw(batch)
         for(mole in moleList)
             mole.render(batch)
     }
