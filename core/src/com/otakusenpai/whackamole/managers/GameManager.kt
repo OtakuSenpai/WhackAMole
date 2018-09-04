@@ -13,7 +13,7 @@ class GameManager() {
 
     var moleVector: Vector2 = Vector2()
 
-    val MOLE_RESIZE_FACOTR = 30f
+    val MOLE_RESIZE_FACOTR = 300f
 
     val mole_VERT_POS_FACTOR = 3f
     val mole1_HORI_POS_FACTOR = 5.8f
@@ -21,7 +21,10 @@ class GameManager() {
     val mole3_HORI_POS_FACTOR = 1.5f
 
     constructor(width: Float, height: Float): this() {
-        moleList = mutableListOf(Mole(),Mole(),Mole())
+        moleList = mutableListOf()
+        moleList.add(Mole())
+        moleList.add(Mole())
+        moleList.add(Mole())
 
         moleTexture = Texture(Gdx.files.internal("mole.png"))
 
